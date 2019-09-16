@@ -1,0 +1,1 @@
+#**This Directory contains scripts for shell variables**
