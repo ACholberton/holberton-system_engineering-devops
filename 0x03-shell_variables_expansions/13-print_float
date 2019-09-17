@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%s" $((NUM * 1.00))
+printf "%.2f\n" $NUM
