@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# the script prints the words "Holberton school" 10 times using until
+counter=$1
+until [ "$counter" -gt 9 ];
+do
+	echo "Holberton School"
+	((counter++))
+done
