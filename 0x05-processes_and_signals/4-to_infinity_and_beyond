@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script makes an infinite loop that prints "To infinity and beyond"
+counter=0
+while [[ $counter -le 10 ]]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
