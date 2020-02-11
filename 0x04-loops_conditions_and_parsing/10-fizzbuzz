@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Script prints numbers from 1 to 100 and on every multiple of 3 it prints fizz,
-on every multiple of 5 prints buzz and every combination ob both prints fizzbuzz
+# on every multiple of 5 prints buzz and every combination ob both prints fizzbuzz
 counter=1
 while [[ $counter -le 100 ]]
 do
