@@ -3,6 +3,7 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
-sudo sed -i "\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=-HdqqqiY6dk permanent;" /etc/nginx/sites-available/default
-sudo service nginx start
+echo "Holberton School" < /var/www/html/index.nginx-debian.html
+v1="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=-HdqqqiY6dk permanent;"
+sudo sed -i "42 $v1" /etc/nginx/sites-available/default
+sudo service nginx restart
