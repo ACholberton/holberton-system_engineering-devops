@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# script installs nginx to the server and redirects you to an error page
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+v1="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=-HdqqqiY6dk permanent;"
+sudo sed -i "42 $v1" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/index.nginx-debian.html
+v2="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=-Hdqdk permanent;"
+sudo sed -i "43 $v2" /etc/nginx/sites-available/default
+sudo service nginx restart
