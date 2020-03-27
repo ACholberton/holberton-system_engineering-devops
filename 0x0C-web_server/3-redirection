@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script installs nginx to the server
+# script installs nginx to the server and redirects you to a youtube video
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
