@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 # Scrips install a load balancer
 
-sudo apt-get update -y
-sudo apt-get install -y haproxy
+apt-get install software-properties-common
+add-apt-repository ppa:vbernat/haproxy-1.6
+apt-get update
+apt-get install haproxy=1.6.
+
+echo "
+frontend localnodes
+bind *:80
+stats uri /haproxy?stats
+default_backend data
+
+backend data
+balance roundrobin
+server 1103-web-01 35.229.80.211 check
+server 1103-web-02 3.85.226.144" >> /etc/haproxy.cfg
+
 sudo service haproxy restart
