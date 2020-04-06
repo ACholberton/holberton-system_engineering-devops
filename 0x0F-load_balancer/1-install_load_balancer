@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Scrips install a load balancer
 
-sudo apt-get install software-properties-common
+sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.6
-sudo apt-get update
-sudo apt-get install haproxy=1.6.
+sudo apt-get -y update
+sudo apt-get -y install haproxy
 
 echo "
 frontend localnodes
@@ -15,6 +15,6 @@ default_backend data
 backend data
 balance roundrobin
 server 1103-web-01 35.229.80.211 check
-server 1103-web-02 3.85.226.144" >> /etc/haproxy/haproxy.cfg
+server 1103-web-02 3.85.226.144 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
