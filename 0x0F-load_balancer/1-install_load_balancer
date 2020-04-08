@@ -6,15 +6,15 @@ sudo add-apt-repository ppa:vbernat/haproxy-1.6
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 
-echo "
+sudo echo "
 frontend localnodes
-bind *:80
-stats uri /haproxy?stats
-default_backend data
+        bind *:80
+        stats uri /haproxy
+        default_backend data
 
 backend data
-balance roundrobin
-server 1103-web-01 35.229.80.211 check
-server 1103-web-02 3.85.226.144 check" >> /etc/haproxy/haproxy.cfg
+        balance roundrobin
+        server 1103-web-01 35.229.80.211:80 check
+        server 1103-web-02 3.85.226.144:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
