@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # This script fixes the issue with nginx
+
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
