@@ -19,13 +19,20 @@ if __name__ == '__main__':
     users = response_users.json()
 
     completed_task = []
-    for task in completed_task:
-        if task['completed'] is True:
-            completed_task.get(['title'])
+    task_counter = 0
+    counter = 0
+
+    for task in todos:
+        if str(task.get('user_id') is user_input):
+            counter += 1
+    for task2 in todos:
+        if str(task2.get('complete') == "True"):
+            task_counter += 1
+            completed_task.append(task2.get('title'))
 
     print("Employee {} is done with tasks({}/{}):".format(users['name'],
-                                                          len(todos),
-                                                          len(completed_task)))
+                                                          counter,
+                                                          task_counter))
 
-    for task in completed_task:
-        print('\t {}'.format(task))
+    for tasks in completed_task:
+        print('\t {}'.format(tasks))
