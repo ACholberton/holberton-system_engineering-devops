@@ -23,10 +23,10 @@ if __name__ == '__main__':
     counter = 0
 
     for task in todos:
-        if str(task.get('user_id') is user_input):
+        if str(task.get('user_id')) is user_input:
             counter += 1
     for task2 in todos:
-        if str(task2.get('complete') == "True"):
+        if str(task2.get('complete')) == "True":
             task_counter += 1
             completed_task.append(task2.get('title'))
 
