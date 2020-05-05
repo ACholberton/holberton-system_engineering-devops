@@ -4,7 +4,6 @@ about his/her TODO list progress."""
 
 import requests
 import sys
-from sys import argv
 
 
 if __name__ == '__main__':
@@ -23,16 +22,15 @@ if __name__ == '__main__':
     counter = 0
 
     for task in todos:
-        if str(task.get('user_id')) is user_input:
+        if str(task.get('userId')) == user_input:
             counter += 1
-    for task2 in todos:
-        if str(task2.get('complete')) == "True":
-            task_counter += 1
-            completed_task.append(task2.get('title'))
+            if str(task.get('completed')) == "True":
+                task_counter += 1
+                completed_task.append(task.get('title'))
 
     print("Employee {} is done with tasks({}/{}):".format(users['name'],
-                                                          counter,
-                                                          task_counter))
+                                                          task_counter,
+                                                          counter))
 
     for tasks in completed_task:
         print('\t {}'.format(tasks))
