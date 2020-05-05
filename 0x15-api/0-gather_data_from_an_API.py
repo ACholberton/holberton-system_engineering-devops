@@ -6,7 +6,7 @@ import requests
 import sys
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     user_input = sys.argv[1]
 
