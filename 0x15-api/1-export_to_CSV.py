@@ -17,7 +17,6 @@ if __name__ == "__main__":
     users = response_users.json()
     user = users.get('username')
 
-
     tasks = []
     pending_task = []
     task_counter = 0
@@ -38,4 +37,4 @@ if __name__ == "__main__":
                                 quoting=csv.QUOTE_MINIMAL)
         for pen_tasks in range(0, len(tasks)):
             spamwriter.writerow(user_input, user, pending_task[pen_tasks],
-                              tasks[pen_tasks])
+                                tasks[pen_tasks])
