@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+diggings()
+{
+	ip=$(dig $2.$1 | awk '/ANSWER SECTION:/ {getline; print$5}')
+	record=$(dig $2.$1 | awk '/ANSWER SECTION:/ {getline; print$4}')
+}
+
+for sbd in "www" "lb-01" "web-01" "web-02"
+do
+	if [ -z "$2" ] || [ "$2" == "sbd" ] ;
+	then
+	diggings "$1" "$sbd"
+	echo "The subdomain $sbd is a $record record and points to $ip"
+	fi
+done
