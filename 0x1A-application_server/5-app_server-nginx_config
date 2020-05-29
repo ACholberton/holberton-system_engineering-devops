@@ -19,7 +19,7 @@ server {
         location /airbnb-onepage/ {include proxy_params; proxy_pass http://0.0.0.0:5000;}
         location /airbnb-dynamic/number_odd_or_even/ {proxy_pass http://0.0.0.0:5001/number_odd_or_even/;}
 	location /api/ {proxy_pass http://0.0.0.0:5002/api;}
-	location / {proxy_pass http://0.0.0.0:5003;}
+	location / {proxy_pass http://0.0.0.0:5003/2-hbnb/;}
 	location /static {proxy_pass://0.0.0.0:5003;}
         add_header X-Served-By $hostname;
         rewrite ^/redirect_me https://www.youtube.com/watch?v=-HdqqqiY6dk permanent;
